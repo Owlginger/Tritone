@@ -1,0 +1,33 @@
+html{
+    --rim-stroke: rgb(50, 143, 206);
+    --rim-stroke-lining: rgb(61, 103, 122);
+}
+svg#range-diall {
+    fill: rgb(224, 206, 206);
+}
+
+#rim-base {
+    fill: none;
+    stroke: rgb(50, 143, 206);
+    stroke-width: 5;
+}
+
+#rim-base-outer {
+    fill: none;
+    stroke: var(--rim-stroke-lining);
+    stroke-width: 2;
+}
+
+#rim-base-inner {
+    fill: none;
+    stroke: var(--rim-stroke-lining);
+    stroke-width: 2;
+}
+
+.level {
+    fill: black;
+}
+
+#current-level-indicator {
+    fill:black;
+}

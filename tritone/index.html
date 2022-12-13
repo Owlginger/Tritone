@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]>      <html class="no-js"> <!--<![endif]-->
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>Tritone Audio</title>
+        <meta name="description" content="Tritone Player">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="tritone.css">
+        <link rel="stylesheet" href="./control-panel/control-plane.css">
+    </head>
+    <body>
+        <!--[if lt IE 7]>
+            <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="#">upgrade your browser</a> to improve your experience.</p>
+        <![endif]-->
+        <tritone></tritone>
+        
+        <script>var exports = {};</script>
+        <script src="./elements/tritone.element.js"></script>
+        <!-- <script src="./elements/control-panel.element.js"></script> -->
+        <script type="module" src="./control-panel/tritone-control-panel.js" async defer></script>
+        <script>
+            const winMain = window;
+
+            const mainX = winMain;
+            const mainY = winMain.screenY;
+
+
+            function openSubmenu(params) {
+                const win = window.open('', '', 'width=480, height=480, left: 800, top: 600');
+                win.outerWidth = '480';
+                win.outerHeight = '480';
+    
+                win.window.moveTo(win.screen.width/2, win.screen.height/2 - win.outerHeight);
+    
+                /* win.addEventListener('blur', closeWindow()); */
+                
+                const body = win.document.getElementsByTagName('body')[0];
+    
+                const heading = `<h1>New Window</h1>`;
+                body.innerHTML += heading;
+    
+                body.style.backgroundColor = 'rgb(144,144,144)';
+            }
+
+            function closeWindow() {
+                setTimeout(() => {
+                    if (!winOpen) {
+                        win.close();
+                    } else {
+                        winOpen = true;
+                    }
+                }, 2000);
+            }
+        </script>
+    </body>
+</html>

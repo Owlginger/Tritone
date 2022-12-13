@@ -1,0 +1,64 @@
+#rim {
+    fill: none;
+    stroke: rgb(151, 35, 107);
+    stroke-width: 8;
+}
+
+#rim-outer-bound {
+    fill: none;
+    stroke: rgb(12, 53, 165);
+    stroke-width: 4;
+}
+
+#rim-inner-strip {
+    fill: none;
+    stroke: rgb(22, 255, 138);
+    stroke-width: 1;
+}
+
+#record-spinner-outer-strip {
+    fill: none;
+    stroke: rgb(22, 255, 138);
+    stroke-width: 1;
+
+}
+
+#record-spinner {
+    fill: rgb(75, 150, 60);
+    stroke: rgb(41, 22, 15);
+    stroke-width: 10;
+}
+
+#record-spinner-pad {
+    fill: rgb(82, 155, 88);
+    stroke: black;
+    stroke-width: 1;
+}
+
+#record {
+    /* fill: rgb(43, 121, 43); */
+    stroke: rgb(39, 18, 10);
+    stroke-width: 1;
+}
+
+#record-inlay {
+    fill: rgba(172, 124, 96, 0.541);
+    stroke: rgb(37, 37, 37);
+    stroke-width: 1;
+}
+
+#record-inner-rim {
+    fill: rgb(0, 0, 0);
+    stroke: rgb(255, 255, 255);
+    stroke-width: 1;
+}
+
+#record-spinner-pin {
+    fill: rgb(0, 0, 0);
+    stroke: rgb(73, 73, 73);
+    stroke-width: 1;
+}
+
+#album-art {
+    cursor: grab;
+}

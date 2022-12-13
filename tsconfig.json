@@ -1,0 +1,10 @@
+{
+    "compilerOptions": {
+        "esModuleInterop": true,
+        "outDir": "tritone",
+        "module": "es2015",
+        "moduleResolution": "node"
+    },
+    "include": ["src/**/*"],
+    "exclude": ["src/server/**/*", "src/components/*", "src/core/*"]
+}

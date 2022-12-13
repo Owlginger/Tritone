@@ -1,0 +1,232 @@
+html {
+    --control-plane-size: 360px;
+}
+
+html, body {
+    box-sizing: border-box;
+    display: block;
+
+    width: 100%;
+    height: 100%;
+}
+
+body {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+
+    align-items: center;
+    justify-content: space-around;
+
+    position: relative;
+}
+
+div {
+    box-sizing: border-box;
+}
+
+div#control-plane-contaienr {
+    display: block;
+
+    width: var(--control-plane-size);
+    height: var(--control-plane-size);
+
+    position: relative;
+    /*
+    top: 0; right: 0; bottom: 0; left: 0; */
+}
+
+svg#deck {
+    background-color: transparent;
+}
+
+#arc-1 {
+    stroke: rgb(216, 216, 216);
+    fill: url(#Gradient1);
+}
+
+#toolbar {
+    stroke: rgb(209, 208, 208);
+    fill: rgb(223, 199, 199);
+}
+
+#menu-button-placeholder {
+    stroke: rgb(148, 148, 148);
+    fill: rgb(111, 117, 110);
+}
+
+#stop1 { stop-color: rgb(211, 211, 211); }
+#stop2 { stop-color: rgb(150, 150, 150); stop-opacity: 1; }
+#stop3 { stop-color: rgb(211, 211, 211); }
+
+div#menu-container {
+    display: block;
+
+    width: 67px;
+    height: 67px;
+
+    border-radius: 22.5px;
+
+    position: absolute;
+    top: 172px;
+    left: 70px;
+}
+
+div#menu-container  > button {
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    width: 67px;
+    height: 67px;
+
+    border-top-color: rgb(150, 150, 150);
+    border-left-color: rgb(150, 150, 150);
+    border-radius: 33.5px;
+
+    background: radial-gradient(rgb(16, 97, 34) 8px, rgb(89, 131, 98) 16px, rgb(175, 175, 175));
+
+}
+
+div#menu-container  > button > svg {
+    display: block;
+
+    width: 35px;
+    height: auto;
+}
+
+svg#lyre > g {
+    fill: rgba(32, 32, 19, 0.829);
+}
+
+div#record-button-container {
+    display: flex;
+    flex-direction: column;
+
+    align-items: center;
+    justify-content: center;
+
+    width: 64px;
+    height: 64px;
+
+    border-radius: 22.5px;
+
+    position: absolute;
+    top: 130px;
+    right: 64px;
+
+    color: rgb(138, 138, 138);
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 10px;
+    font-weight: bold;
+    letter-spacing: 0.1px;
+
+    text-align: center;
+    text-rendering: geometricPrecision;
+    
+}
+
+div#record-button-container  > button {
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    width: 49px;
+    height: 49px;
+
+    border-top-color: rgb(255, 117, 147);
+    border-left-color: rgb(255, 98, 132);
+    border-radius: 32px;
+
+    background: radial-gradient(circle 49px, rgb(255, 131, 148), rgb(194, 10, 26) 40%);
+
+    transition-property: border-color;
+    transition: all 0.8s;
+}
+
+div#record-button-container  > button > svg {
+    display: block;
+
+    width: 27px;
+    height: auto;
+}
+
+div#record-button-container  > button > svg > path {
+    fill: none;
+    stroke: rgb(133, 0, 0);
+    stroke-width: 5;
+}
+
+div#record-button-container > span {
+    box-sizing: border-box;
+    display: block;
+
+    width: fit-content;
+    height: 15px;
+
+    margin-top: 4px;
+}
+
+
+
+
+
+/* Record Player  */
+
+div#record-player-container {
+    display: block;
+
+    width: 360px;
+    height: 360px;
+
+    background-color: rgb(218, 218, 218);
+}
+
+/* Range Dial */
+
+div#range-dial-container {
+    display: flex;
+    flex-direction: row;
+
+    align-items: center;
+    justify-content: center;
+
+    width: 360px;
+    height: 360px;
+
+    background-color: rgb(242, 243, 242);
+}
+
+
+/* Range Control */
+
+div#range-control-container {
+    display: flex;
+    flex-direction: row;
+
+    align-items: center;
+    justify-content: center;
+
+    width: 360px;
+    height: 360px;
+
+    background-color: rgb(215, 187, 221);
+}
+
+
+/* Track Wave */
+
+div#track-wave-container {
+    display: flex;
+    flex-direction: row;
+
+    align-items: center;
+    justify-content: center;
+
+    width: 640px;
+    height: 360px;
+
+    background-color: rgb(215, 187, 221);
+}

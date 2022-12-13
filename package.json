@@ -1,0 +1,50 @@
+{
+  "name": "tritone",
+  "version": "1.0.0",
+  "description": "Tritone Audio",
+  "main": "tritone/tritone.js",
+  "exports": [
+    "tritone/tritone.js"
+  ],
+  "scripts": {
+    "start:server": "node express-server.js",
+    "start:electron": "electron .",
+    "build:server": "tsc src/server/express-server.ts --esModuleInterop true --outDir .",
+    "build:core": "tsc ./src/core/preload.ts src/tritone.ts --esModuleInterop true --outDir tritone",
+    "build": "./tsc ./src",
+    "build:sass": "node-sass -r ./src -o ./tritone",
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "Tritone Audio"
+  },
+  "keywords": [
+    "Music",
+    "Player",
+    "Audio",
+    "Player",
+    "Sound",
+    "Player",
+    "Media",
+    "Player",
+    "Dj",
+    "Mixer"
+  ],
+  "author": "Oroha",
+  "license": "ISC",
+  "devDependencies": {
+    "@types/express": "^4.17.14",
+    "electron": "^22.0.0",
+    "express": "^4.18.2",
+    "express-generator": "^4.15.5",
+    "node-sass": "^8.0.0",
+    "nodemon": "^2.0.20",
+    "typescript": "^4.9.4"
+  },
+  "dependencies": {
+    "@svgdotjs/svg.js": "^3.1.2",
+    "svg.path.js": "^0.6.2",
+    "svgdom": "^0.1.10"
+  }
+}

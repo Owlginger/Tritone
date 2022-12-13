@@ -1,0 +1,54 @@
+svg#range-control {
+    fill: rgb(119, 192, 119);
+}
+
+#range-units-container {
+  
+}
+
+#range-units-background {
+    fill: rgb(15, 15, 15);
+}
+
+.range-max { stop-color: red; }
+.range-mid { stop-color: black; stop-opacity: 0.5; }
+.range-min { stop-color: blue; }
+
+.indicator {
+  fill: rgb(119, 192, 119);
+}
+
+
+#track {
+  fill: white;
+}
+
+#track-level {
+  fill: rgba(85, 84, 177, 0.952);
+}
+
+#range-knob-container {
+  /*  TO DO */
+}
+
+#knob {
+  fill: rgb(17, 17, 17);
+  stroke: white;
+  stroke-width: 1;
+}
+
+#knob-handle {
+  fill: rgb(19, 19, 19);
+  stroke: white;
+  stroke-width: 1;
+
+  cursor: grab;
+}
+
+#knob-handle-center {
+  fill: rgb(255, 255, 255);
+  stroke: none;
+  stroke-width: 1;
+
+  cursor: grab;
+}
