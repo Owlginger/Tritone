@@ -17,20 +17,10 @@
   },
   "repository": {
     "type": "git",
-    "url": "Tritone Audio"
+    "url": "tritone.audio"
   },
   "keywords": [
-    "Music",
-    "Player",
-    "Audio",
-    "Player",
-    "Sound",
-    "Player",
-    "Media",
-    "Player",
-    "Dj",
-    "Mixer"
-  ],
+    "Music", "Player", "Audio", "Player", "Sound", "Player", "Media", "Player", "Dj", "Mixer"],
   "author": "Oroha",
   "license": "ISC",
   "devDependencies": {

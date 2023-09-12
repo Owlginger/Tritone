@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8" lang="en"/>
+        
+        <meta http-equiv="content-security-policy" content="default-src 'self'; script-src 'self'" />
+        <meta http-equiv="x-content-security-policy" content="default-src 'self'; script-src 'self'" />
+        <title>Lyre Media Player</title>
+
+        <link rel="stylesheet" href="player-window.css">
+    </head>
+    <body>
+        <div id="player-window" tabindex="0">
+            <div id="player-window-bg"></div>
+            <div id="player-window-main">
+                <div>
+                    <div id="player-toolbar">
+                        <div>
+                            <button id="player-minimize-btn" class="player-toolbar-button">_</button>
+                            <button id="player-close-btn" class="player-toolbar-button">x</button>
+                        </div>
+                    </div>
+                    <div id="player-container">
+                        <div id="track-window-container">
+                            <div id="album-art-container">
+                            <div id="art-wrapper" tabindex="0">
+            
+                            </div>
+                            </div>
+                            <div id="track-window">
+                                <div id="track-main-window" tabindex="0">
+                                    <div id="track-info-container">
+                                        <div>
+                                            <div id="track-info">
+                                                    <div tabindex="0">I Know Why The Caged Bird Sings</div>
+                                                <div>by <span tabindex="0">Scienz Of Life</span> from <span tabindex="0">I Know Why The Caged Bird Sings</span></div>
+                                            </div>
+                                            <div id="wave-mode-container">
+                                                <div>Mode</div>
+                                                <div id="motion">
+                                                    <input type="radio" name="wave-mode" id="motion-checkbox">
+                                                    <label for="motion">motion</label>
+                                                </div>
+                                                <div id="static">
+                                                    <input type="radio" name="wave-mode" id="static-checkbox">
+                                                    <label for="static">static</label>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div id="inner-toolbar">
+                                    <div>
+                                        <button>.</button>
+                                        <button>1</button>
+                                        <button>.</button>
+                                        <div></div>
+                                        <button>.</button>
+                                    </div>
+                                </div>
+                            </div>
+                            <div id="track-controls">
+                                <div id="volume-control" tabindex="0">
+                                    <lyre-volume></lyre-volume>
+                                </div>
+                                <div id="volume-button">
+                                    <button>
+                                        <fa-icon icon="volume-high"></fa-icon>
+                                    </button>
+                                </div>
+                                <div id="channel-control">
+                                    <div>
+                                        <button>LIVE</button>
+                                        <button>MONITOR</button>
+                                    </div>
+                                </div>
+                                <div id="play-controls">
+                                    <div>
+                                        <button>&nvlArr;</button>
+                                        <button>&hArr;</button>
+                                        <button>&nLt;</button>
+                                        <button>&nGt;</button>
+                                        <button>&sdotb;</button>
+                                        <button>&sc;</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div id="record-player-container" tabindex="0">
+                            
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div id="player-window-overlay"></div>
+        </div>
+        <script src="player-window.js"></script>
+    </body>
+</html>

@@ -1,0 +1,578 @@
+html {
+    --player-window-width: 738px;
+    --player-window-height: 261px;
+
+    --player-border-radius: 27px;
+
+    --toolbar-height: 22px;
+
+    --inner-toolbar-height: 36px;
+    --innter-toolbar-item-width: 29px;
+
+    --vonlume-control-size: 27px;
+ }
+
+ html, body {
+    box-sizing: border-box;
+    display: block;
+    width: 100%;
+    height: 100%;
+
+    padding: 0;
+
+    overflow: hidden;
+ }
+
+ div#player-window {
+    box-sizing: border-box;
+    display: block;
+
+    min-width: 234px;
+    min-height: 234px;
+
+    width: var(--player-window-width);
+    height: var(--player-window-height);
+
+    border-radius: var(--player-border-radius);
+
+    position: relative;
+
+    background-color: black;
+
+    z-index: 0;
+
+    overflow: hidden;
+ }
+
+ div#player-window-bg {
+    box-sizing: border-box;
+    display: block;
+
+    position: absolute;
+    top: 0; right: 0; bottom: 0; left: 0;
+
+    background-color: rgba(68, 68, 68, 0.5);
+
+    z-index: 1;
+ }
+
+ div#player-window-main {
+    box-sizing: border-box;
+    display: block;
+
+    margin: 0;
+    padding: 0;
+
+    position: absolute;
+    top: 0; right: 0; bottom: 0; left: 0;
+
+    background-color: rgba(109, 109, 109, 0.5);
+
+    z-index: 2;
+ }
+
+ div#player-window-main>div {
+    box-sizing: border-box;
+    display: block;
+
+    width: 100%;
+    height: 100%;
+
+    position: static;
+ }
+
+ div#player-window-main > div > div#player-toolbar {
+    box-sizing: border-box;
+    display: block;
+
+    width: 100%;
+    height: var(--toolbar-height);
+
+    background-color: rgb(0, 136, 66);
+
+    -webkit-app-region: drag;
+ }
+
+ div#player-toolbar > div {
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    align-items: center;
+
+    width: 100%;
+    height: 100%;
+
+    padding-right: calc(var(--player-border-radius) / 2);
+
+    background-color: deeppink;
+ }
+
+ div#player-toolbar > div > button {
+    box-sizing: border-box;
+    display: block;
+    width: 20px;
+    height: 20px;
+
+    padding-bottom: 2px;
+    border: 0;
+    margin: 0;
+
+    font-size: 12px;
+    line-height: 12px;
+
+    border-radius: 6px;
+
+    background-color: rgb(185, 105, 40);
+
+    -webkit-app-region: no-drag;
+ }
+
+ div#player-toolbar > div > button:first-child {
+    margin-right: 3px;
+ }
+
+
+ div#player-window-main > div > div#player-container {
+    box-sizing: border-box;
+    display: block;
+
+    width: 100%;
+    height: calc(100% - var(--toolbar-height));
+
+    background-color: rgb(2, 69, 133);
+
+ }
+
+ div#player-container > div#track-window-container {
+    box-sizing: border-box;
+    display: grid;
+    grid-template-columns: 25% 62% 13%;
+    grid-template-rows: 100%;
+    align-items: stretch;
+    justify-content: stretch;
+    justify-items: stretch;
+
+    width: 100%;
+    height: 100%;
+
+    position: relative;
+
+    background-color: rgb(40, 199, 191);
+ }
+
+ div#track-window-container > div#album-art-container {
+    grid-column: 1 / 1;
+    grid-row: 1 / 1;
+
+    box-sizing: border-box;
+    display: block;
+
+    width: 30%;
+    height: 100%;
+ }
+
+ div#track-window-container > div#album-art-container {
+    grid-column: 1 / 1;
+    grid-row: 1 / 1;
+    
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: flex-start;
+
+    width: 100%;
+    height: 100%;
+
+    background-color: rgb(65, 55, 0);
+ }
+
+ div#album-art-container > div#art-wrapper {
+    box-sizing: border-box;
+    display: block;
+
+    width: 72px;
+    height: 72px;
+
+    background-color: rgb(99, 99, 99);
+ }
+
+ div#track-window-container > div#track-window {
+    grid-column: 2 / 2;
+    grid-row: 1 / 1;
+    
+    box-sizing: border-box;
+    display: grid;
+    grid-template-columns: 100%;
+    grid-template-rows: calc(100% - var(--inner-toolbar-height)) var(--inner-toolbar-height);
+    justify-content: stretch;
+    justify-items: stretch;
+    align-items: stretch;
+
+    width: 100%;
+    height: 100%;
+
+    background-color: rgb(136, 117, 10);
+ }
+
+ div#track-window > div#track-main-window {
+    grid-column: 1 / 1;
+    grid-row: 1 / 1;
+
+    box-sizing: border-box;
+
+    display: block;
+
+    width: 100%;
+    height: 100%;
+
+    position: relative;
+
+    background-color: rgb(42, 165, 79);
+ }
+
+ div#track-window > div#track-main-window:focus {
+    border: 1px solid black;
+    box-shadow: none;
+ }
+
+ div#track-main-window > div#track-info-container {
+    box-sizing: border-box;
+    display: block;
+
+    height: 47px;
+
+    position: absolute;
+    top: 0; right: 0; left: 0;
+
+    background-color: rgb(143, 87, 35);
+ }
+
+ div#track-info-container > div {
+    box-sizing: border-box;
+    display: grid;
+    grid-template-columns: calc(100% - 108px) 108px;
+    grid-template-rows: 100%;
+
+    width: 100%;
+    height: 100%;
+
+    position: static;
+ }
+
+ div#track-info {
+    box-sizing: border-box;
+    display: block;
+
+    width: 100%;
+    height: 100%;
+
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: 200;
+    font-size: 13px;
+
+    background-color: rgb(81, 143, 133);
+ }
+
+ div#track-info > div:first-child {
+    cursor: pointer;
+
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: 700;
+    font-size: 17px;
+ }
+
+ div#track-info > div:last-child {
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: 200;
+    font-size: 13px;
+ }
+
+ div#track-info > div:last-child > span:hover {
+    cursor: pointer;
+ }
+
+ div#wave-mode-container {
+    box-sizing: border-box;
+    display: grid;
+    grid-template-columns: 50% 50%;
+    grid-template-rows: 40% 60%;
+
+    align-items: stretch;
+    justify-content: stretch;
+    justify-items: stretch;
+
+    width: 108px;
+    height: 36px;
+
+    position: absolute;
+    top: 0;
+    right: 0;
+
+    border-radius: 9px;
+
+    overflow: hidden;
+ }
+
+ div#wave-mode-container > div {
+    box-sizing: border-box;
+    display: block;
+
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 11px;
+ }
+
+ div#wave-mode-container > div:first-child {
+    
+    grid-column: 1 / 2;
+    grid-row: 1 / 1;
+
+    font-size: 12px;
+    background-color: rgb(65, 182, 84);
+ }
+
+ div#wave-mode-container > div:nth-child(2) {
+    grid-column: 1 / 1;
+    grid-row: 2 / 2;
+
+    background-color: rgb(100, 199, 118);
+ }
+
+ div#wave-mode-container > div:last-child {
+    grid-column: 2 / 2;
+    grid-row: 2 / 2;
+
+    background-color: rgb(65, 159, 182);
+ }
+
+ div#wave-mode-container > div > input {}
+ 
+
+ div#track-window > div#inner-toolbar {
+    grid-column: 1 / 1;
+    grid-row: 2 / 2;
+
+    box-sizing: border-box;
+
+    display: block;
+
+    width: 100%;
+    height: 100%;
+
+    background-color: brown;
+ }
+
+ div#inner-toolbar > div {
+    box-sizing: border-box;
+    display: grid;
+    grid-template-columns: var(--innter-toolbar-item-width) var(--innter-toolbar-item-width) var(--innter-toolbar-item-width) calc(100% - calc(var(--innter-toolbar-item-width)*4)) var(--innter-toolbar-item-width);
+    grid-template-rows: 100%;
+    
+    align-items: center;
+    justify-content: start;
+    justify-items: start;
+
+    width: 100%;
+    height: 100%;
+
+    padding: 0 3px;
+
+    background-color: rgb(255, 246, 119);
+ }
+
+ div#inner-toolbar > div  > button {
+    box-sizing: border-box;
+    display: block;
+
+    width: 26px;
+    height: 26px;
+ }
+
+ div#inner-toolbar > div  > button:first-child {
+    grid-column: 1 / 1;
+    grid-row: 1 / 1;
+ }
+
+ div#inner-toolbar > div  > button:nth-child(2) {
+    grid-column: 2 / 2;
+    grid-row: 1 / 1;
+ }
+
+ div#inner-toolbar > div  > button:nth-child(3) {
+    grid-column: 3 / 3;
+    grid-row: 1 / 1;
+ }
+
+ div#inner-toolbar > div  > div {
+    grid-column: 4 / 4;
+    grid-row: 1 / 1;
+
+    box-sizing: border-box;
+    width: 100%;
+    height: 100%;
+ }
+
+ div#inner-toolbar > div  > button:last-child {
+    grid-column: 5 / 5;
+    grid-row: 1 / 1;
+
+    justify-self: flex-end;
+
+ }
+
+ div#track-window-container > div#track-controls {
+    grid-column: 3 / 3;
+    grid-row: 1 / 1;
+    
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    align-items: flex-start;
+
+    width: 100%;
+    height: 100%;
+
+    padding-top: 6px;
+    padding-bottom: 6px;
+    padding-left: 6px;
+
+    position: relative;
+
+    background-color: rgb(173, 162, 98);
+ }
+
+ div#track-controls > div#volume-control {
+    box-sizing: border-box;
+    display: block;
+
+    width: var(--vonlume-control-size);
+    height: calc(100% - var(--vonlume-control-size));
+
+    background-color: rgb(112, 212, 117);
+ }
+
+ div#track-controls > div#volume-button {
+    box-sizing: border-box;
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    width: 27px;
+    height: 27px;
+
+    padding: 0;
+
+    background-color: black;
+ }
+
+ div#track-controls > div#volume-button > button {
+    box-sizing: border-box;
+    display: block;
+
+    width: 27px;
+    height: 27px;
+ }
+
+ div#track-controls > div#channel-control {
+    box-sizing: border-box;
+    display: block;
+
+    width: 63px;
+    height: 47px;
+
+    padding: 3px;
+
+    position: absolute;
+    top: 0; right: 0px; 
+
+    background-color: rgba(0, 0, 0, 0.418);
+ }
+
+ div#track-controls > div#channel-control > div {
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    align-items: center;
+    justify-content: space-between;
+
+    width: 100%;
+    height: 100%;
+
+    position: static;
+ }
+
+ div#channel-control > div  > button {
+    box-sizing: border-box;
+    display: block;
+
+    width: 59px;
+
+    border: 1px solid rgb(255, 255, 255);
+    border-radius: 2px;
+    
+
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 11px;
+    font-weight: 400;
+
+    color: rgb(151, 151, 151);
+
+    background-color: black;
+ }
+
+ div#play-controls {
+    width: 56px;
+    height: 120px;
+
+    padding: 3px;
+
+    position: absolute;
+    bottom: 0; right: 0px; 
+
+    background-color: rgba(0, 0, 0, 0.418);
+ }
+
+ div#play-controls > div {
+    box-sizing: border-box;
+    display: grid;
+    grid-template-columns: 27px 27px;
+    grid-template-rows: 27px 27px 27px;
+
+    column-gap: 3px;
+    row-gap: 3px;
+
+    align-items: center;
+    justify-content: center;
+
+    width: 100%;
+    height: 100%;
+ }
+
+ div#player-container > div#record-player-container {
+    box-sizing: border-box;
+    display: block;
+    width: 165px;
+    height: 150px;
+
+    position: absolute;
+    bottom: 9px;
+    left: 11px;
+
+    background-color: rgb(107, 168, 91);
+ }
+
+ div#player-window-overlay {
+    box-sizing: border-box;
+    display: none;
+
+    position: absolute;
+    top: 0; right: 0; bottom: 0; left: 0;
+
+    background-color: rgba(168, 168, 168, 0.5);
+
+    z-index: 3;
+ }
